@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERAMU | Natural Haircare</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>MERAMU</h1>
+        <h2>Pure Beauty, Naturally Yours</h2> 
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Your Natural Haircare Solution</h2>
+        <p>Experience the beauty of nature with our luxurious haircare products.</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="hairmask.jpg" alt="Cardamom Hair Mask">
+                <h3>Cardamom Hair Mask</h3>
+                <p>Deeply nourishes and revitalizes your hair with the power of cardamom.</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <img src="hairoil.jpg" alt="Cardamom Hair Oil">
+                <h3>Cardamom Hair Oil</h3>
+                <p>Luxurious oil that strengthens, moisturizes, and restores shine.</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="product">
+                <img src="hairtonic.jpg" alt="Cardamom Hair Tonic">
+                <h3>Cardamom Hair Tonic</h3>
+                <p>Stimulates hair growth and improves scalp health with natural ingredients.</p>
+                <button>Shop Now</button>
+            </div>
+            <!-- New Bundle Product -->
+            <div class="product">
+                <img src="bundle.png" alt="Cardamom Haircare Bundle">
+                <h3>Cardamom Bundle</h3>
+                <p>Get the complete set of our signature Cardamom Hair Mask, Hair Oil, and Hair Tonic at a special price!</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-slider">
+            <!-- Slider Container -->
+            <div class="slider">
+                <div class="slides">
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <img src="founder.jpg" alt="Founder 1">
+                        <div class="caption">
+                            <h3>Our Founder</h3>
+                            <p>Meet the visionary behind MERAMU. With a passion for natural beauty, our founder crafted haircare solutions inspired by nature.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <img src="cardamom.jpg" alt="Founder 2">
+                        <div class="caption">
+                            <h3>Our Mission</h3>
+                            <p>
+                                Memanfaatkan potensi kapulaga dengan mengolah menjadi bahan utama yang unik dan bermanfaat dalam industri kecantikan.
+                                Memberikan solusi perawatan rambut yang bebas bahan kimia berbahaya.
+                                Mengedepankan standar kualitas tinggi melalui pengujian klinis yang ketat.
+                                Mengutamakan keberlanjutan melalui penggunaan kemasan ramah lingkungan.
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
+        </div>
+    </section>
+    <script>
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+    
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+    
+            const offset = -currentSlide * 100; // Menggeser slide
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+    
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+    
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+    
+        // Tampilkan slide pertama
+        showSlide(currentSlide);
+    </script>
+</body>
+    
